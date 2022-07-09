@@ -1,4 +1,4 @@
-﻿// Task34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+// Task34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
 
 int[] CreateRandomArray( int size,int minValue, int maxValue)
@@ -35,11 +35,6 @@ int FindQuantity(int []array)
 
 Console.WriteLine("Задайте размер массива ");
 int size=Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Задайте минимальное значение массива");
-int min=Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Задайте максимальное значение массива");
-int max=Convert.ToInt32(Console.ReadLine());
-
 
 
 int[]array=CreateRandomArray(size,min,max);
