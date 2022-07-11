@@ -25,7 +25,7 @@ int Summa(int []array)
 
     for (int i=0; i<array.Length; i++)
     
-    if(array[i]%2 == 1 ) summa=summa+array[i];
+    if(i%2 == 1 ) summa=summa+array[i];
         
  return summa;
 
@@ -46,4 +46,4 @@ int[]array=CreateRandomArray(size,min,max);
 ShowArray(array);
 
 int sumOfArray=Summa(array);
-Console.WriteLine("Сумма нечетных случайных значений массива равна " +sumOfArray);
+Console.WriteLine("Сумма случайных значений массива нечетных индексов равна " +sumOfArray);
