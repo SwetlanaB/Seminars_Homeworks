@@ -25,12 +25,26 @@ void Show2dArray(int[,]array)
         
 }
 
-int Avarage(int[,]array)
-int avarage=0;
-for(int i=0; i <array.GetLength(0); i++)
+void Avarage(int[,]array,int rows,int columns)
+{
+    
+    int m= rows;
+    int n=columns;
+
+    for (int j=0; j <n; j++)
     {
-        for(int j=0; j <array.GetLength(1); j++)
-            array[]
+        double avarage=0;
+        Console.Write("Столбец " +(j+1)+" ");
+         for (int i=0; i<rows;i++)
+        {
+           avarage=avarage+array[i,j];
+        }
+         Console.WriteLine("cреднее арифметическое столбца=" +avarage/m);
+            
+    }
+   
+}
+
 
 Console.WriteLine("Input number of rows=" );
 int m=Convert.ToInt32(Console.ReadLine());
@@ -43,3 +57,4 @@ int max=Convert.ToInt32(Console.ReadLine());
 
 int [,]myArray=CreateRandom2dArray(m,n,min,max);
 Show2dArray(myArray);
+Avarage(myArray, m,n);
