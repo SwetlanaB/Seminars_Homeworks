@@ -24,6 +24,28 @@ void Show2dArray(int[,]array)
         
 }
 
+void FindElement(int[,]array,int m,int n,int x,int y)
+{
+ x=0;
+ y=0;
+ m=0;
+ n=0;
+ 
+    for(int i=0; i <m; i++)
+    {
+        for(int j=0; j <n; j++)
+        {
+         while (x<m && y<n)
+            if ( array[i,j]==array[x,y])
+            i=x;
+            j=y;
+                
+        }   
+    }    
+    Console.Write("Число существует= " + array[x,y]); 
+}
+
+
 Console.WriteLine("Input number of rows=" );
 int m=Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Input number of columns=" );
@@ -33,5 +55,12 @@ int min=Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Input max of array=" );
 int max=Convert.ToInt32(Console.ReadLine());
 
+Console.WriteLine("Input x of array element=" );
+int x =Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input y of array element=" );
+int y=Convert.ToInt32(Console.ReadLine());
+
 int [,]myArray=CreateRandom2dArray(m,n,min,max);
 Show2dArray(myArray);
+
+FindElement(myArray,m,n,x,y);
