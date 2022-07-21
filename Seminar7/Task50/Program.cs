@@ -24,25 +24,21 @@ void Show2dArray(int[,]array)
         
 }
 
-void FindElement(int[,]array,int m,int n,int x,int y)
+int FindElement(int[,]array,int x,int y)
 {
- x=0;
- y=0;
- m=0;
- n=0;
- 
-    for(int i=0; i <m; i++)
+     for(int i=0; i <array.GetLength(0); i++)
     {
-        for(int j=0; j <n; j++)
+        for(int j=0; j <array.GetLength(1); j++)
         {
-         while (x<m && y<n)
-            if ( array[i,j]==array[x,y])
-            i=x;
-            j=y;
-                
+         
+            if ( i==x && j==y)
+            {
+              return array[x,y];
+            }      
         }   
     }    
-    Console.Write("Число существует= " + array[x,y]); 
+    
+    return -1; 
 }
 
 
@@ -63,4 +59,5 @@ int y=Convert.ToInt32(Console.ReadLine());
 int [,]myArray=CreateRandom2dArray(m,n,min,max);
 Show2dArray(myArray);
 
-FindElement(myArray,m,n,x,y);
+int element=FindElement(myArray,x,y);
+Console.Write( element);
