@@ -38,14 +38,8 @@ int [,]SmallToBig(int[,]array)
                 array[k,j-1]=array[k,j];
                 array[k,j]=temp;
                 }
-                   
-            }
-                  
-            
-            
+            }     
         }
-        
-            
     }
     Console.WriteLine();
     return array;            
