@@ -16,7 +16,6 @@ int[,] Create2dArray(int m, int n)
     return newArray;        
 }
 
-
 void Show2dArray(int[,]array)
 {
     for(int i=0; i <array.GetLength(0); i++)
@@ -30,43 +29,39 @@ void Show2dArray(int[,]array)
 
 int RangeSum(int[,]array,int m,int n)
 {
-   int sum=0;
-    for(int i=0; i <m; i++)
+   
+   int minSum=0;
+   int iMin=0;
+
+    for(int i=0; i <1; i++)
     {  
-        sum=0;
-            for(int j=0; j <n; j++)
+         for(int j=0; j <n; j++)
+        {
+            minSum=minSum+array[i,j];//Console.WriteLine("минимальная сумма"+minSum);
+        }
+    }      
+     
+    for(int i=1; i <m; i++)
+    {  
+        int sum=0;
+         for(int j=0; j <n; j++)       
+        {    
+          sum=sum+array[i,j];// Console.WriteLine("Сумма строки" +sum); 
+        }     
+            if  (sum <= minSum)
             {
-               sum=sum+array[i,j];
-            }
-            Console.WriteLine(sum);
-    }
-    return sum;           
-}
+                minSum = sum;
+                iMin=i+1;
+            } 
+    }          
+                
+         
+Console.WriteLine("Минимальная сумма =" +minSum);
+Console.WriteLine("искомая строка="+iMin);  
+  
+return minSum; 
+}        
 
-int[]CreateArray(int size)
-{
-    int[]newArray=new int[size];
-    
-    for( int i=0;i<size; i++)
-    {
-    Console.WriteLine($"Введите число{i+1}");
-    newArray[i]=Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine(); 
-    }
-    return newArray;
-}    
-
-void MinSum( int[]newArray,int m)
-{
-int min=newArray[0];
-
-    for(int i=0;i<m; i++)
-    {
-    if(min>newArray[i]) min=newArray[i]; 
-    
-    }
-    Console.WriteLine("минимальная сумма="+min);
-} 
 
 Console.WriteLine("Input number of rows=" );
 int m=Convert.ToInt32(Console.ReadLine());
@@ -76,6 +71,6 @@ int n=Convert.ToInt32(Console.ReadLine());
 
 int [,]myArray=Create2dArray(m,n);
 Show2dArray(myArray);
-int a=RangeSum(myArray,m,n);
-int []newArray=CreateArray(m);
-MinSum(newArray,m);
+ 
+int  minSum=RangeSum(myArray,m,n);
+ 
