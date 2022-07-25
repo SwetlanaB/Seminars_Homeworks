@@ -23,7 +23,7 @@ void Show2dArray(int[,]array)
         
 }
 
-int [,]SmallToBig(int[,]array)
+int [,]BigToSmall(int[,]array)
 {
     for(int k=0; k< array.GetLength(0);k++)
     {
@@ -32,11 +32,11 @@ int [,]SmallToBig(int[,]array)
             for(int j=array.GetLength(1)-1; j >i; j--)
             {
              
-                if (array[k,j-1]>array[k,j])
+                if (array[k,j-1]<array[k,j])
                 {
                 int temp=array[k,j-1];
                 array[k,j-1]=array[k,j];
-                array[k,j]=temp;
+               array[k,j] =temp;
                 }
             }     
         }
@@ -58,4 +58,4 @@ int max=Convert.ToInt32(Console.ReadLine());
 
 int [,]myArray=CreateRandom2dArray(m,n,min,max);
 Show2dArray(myArray);
-Show2dArray(SmallToBig(myArray));
+Show2dArray(BigToSmall(myArray));
