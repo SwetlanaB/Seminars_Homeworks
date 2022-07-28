@@ -2,7 +2,7 @@
 
 int SummaNum(int m,int n)
 {
-  if((m-1)==n) return 0; 
+  if(m==n) return m; 
   else 
   {
    return n +SummaNum(m,n-1);
